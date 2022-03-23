@@ -100,9 +100,9 @@ printAllMovies()
 
 // 3. Return an array of all Beyonce's hit song titles
 function hitSongTitles() {
-    return beyonceHash.hits.map(song => song.title)
-
+    return beyonceHash.hits.map(hits => hits.title)
 }
+hitSongTitles()
 
 
 
