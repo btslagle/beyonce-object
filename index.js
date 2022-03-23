@@ -86,12 +86,17 @@ const beyonceHash = {
 
 // 1. Print all the songs
 function printAllSongs() {
-    const = allSongs = beyonceHash.hits.map(hit => hit.title)
+    const allSongs = beyonceHash.hits.map(hit => hit.title)
     console.log(allSongs)
 }
 printAllSongs()
-    // 2. Print all the movies
-function printAllMovies() {}
+
+// 2. Print all the movies
+function printAllMovies() {
+    const allMovies = beyonceHash.movies.map(movies => movies.title)
+    console.log(allMovies)
+}
+printAllMovies()
 
 // 3. Return an array of all Beyonce's hit song titles
 function hitSongTitles() {}
