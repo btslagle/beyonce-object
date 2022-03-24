@@ -100,64 +100,70 @@ printAllMovies()
 
 // 3. Return an array of all Beyonce's hit song titles
 function hitSongTitles() {
-    return beyonceHash.hits.map(hits => hits.title)
+    const allSongs = beyonceHash.hits.map(hit => hit.title)
+    console.log(allSongs)
 }
 hitSongTitles()
 
-
-
-
-
 // 4. Return an array of all Beyonce's fierceness ratings
-function allFiercenessRatings() {}
+function allFiercenessRatings() {
+    const fierceness = beyonceHash.hits.map(hit => hit.fierceness)
+    console.log(fierceness)
+}
+allFiercenessRatings()
+
 
 // 5. Return all the songs where Beyonce is wearing a bodysuit or a bodysuit is part of the video theme
-function songsWithBodySuits() {}
+function songsWithBodySuits() {
+    const bodysuit = beyonceHash.hits.filter(hit => hit.signature_look.includes("bodysuit") || hit.video_theme.includes("bodysuit") )
+    console.log(bodysuit) 
+    
+    }
+    songsWithBodySuits()
+        // 6. Return an array with all of the songs where Beyonce's fierceness is greater than or equal to a given number
+    function getSongsByFiercenessGTE() {}
 
-// 6. Return an array with all of the songs where Beyonce's fierceness is greater than or equal to a given number
-function getSongsByFiercenessGTE() {}
+    // 7. Return an array with all of the movies Beyonce made after or during a given year
+    function getMoviesByDateGTE() {}
 
-// 7. Return an array with all of the movies Beyonce made after or during a given year
-function getMoviesByDateGTE() {}
+    // 8. Return all hit songs where Beyonce was in a group
+    function groupHits() {}
 
-// 8. Return all hit songs where Beyonce was in a group
-function groupHits() {}
+    // 9. Return a hit song where Beyonce's hair is blonde
+    function findBlondeHit() {}
 
-// 9. Return a hit song where Beyonce's hair is blonde
-function findBlondeHit() {}
+    // 10. Return the hit song "Sorry"
+    function sorry() {}
 
-// 10. Return the hit song "Sorry"
-function sorry() {}
+    // 11. Return a given song
+    function getSong() {}
 
-// 11. Return a given song
-function getSong() {}
+    // 12. Return all hit songs where Beyonce's fierceness rating is 10
+    function fiercestHits() {}
 
-// 12. Return all hit songs where Beyonce's fierceness rating is 10
-function fiercestHits() {}
+    // 13. Return the sum of Beyonce's fierceness value for all of her hit songs
+    function hitFiercenessSum() {}
 
-// 13. Return the sum of Beyonce's fierceness value for all of her hit songs
-function hitFiercenessSum() {}
+    // 14. Return the average fierceness value for all Beyonce's hit songs
+    function hitFiercenessAverage() {}
 
-// 14. Return the average fierceness value for all Beyonce's hit songs
-function hitFiercenessAverage() {}
+    // 15. Return the sum of Beyonce's rating value for all of her movies
+    function ratingSum() {}
 
-// 15. Return the sum of Beyonce's rating value for all of her movies
-function ratingSum() {}
+    // 16. Return the average rating value for all of her movies
+    function ratingAverage() {}
 
-// 16. Return the average rating value for all of her movies
-function ratingAverage() {}
+    // 17. Return the sum of the total number of dancers in all of the hit song videos
+    function hitDancerSum() {}
 
-// 17. Return the sum of the total number of dancers in all of the hit song videos
-function hitDancerSum() {}
+    // 18. Return an array of Beyonce's hairstyles without repeats
+    function uniqueHairstyles() {}
 
-// 18. Return an array of Beyonce's hairstyles without repeats
-function uniqueHairstyles() {}
+    // 19. Return an object where the properties are song names and the value is an object which contains that song's fierceness and the average fierceness for all songs
+    function songFiercenessByName() {}
 
-// 19. Return an object where the properties are song names and the value is an object which contains that song's fierceness and the average fierceness for all songs
-function songFiercenessByName() {}
+    // 20. Return an object where the properties are movie names and the value is an object which contains that movie's rating and the average rating for all movies
+    function movieRatingsByName() {}
 
-// 20. Return an object where the properties are movie names and the value is an object which contains that movie's rating and the average rating for all movies
-function movieRatingsByName() {}
-
-// 21. Return an object with Beyonce's hairstyles as the keys and a tally of each hairstyle, eg. `{ "blonde": 3, ... }`
-function hairStyleFrequency() {}
+    // 21. Return an object with Beyonce's hairstyles as the keys and a tally of each hairstyle, eg. `{ "blonde": 3, ... }`
+    function hairStyleFrequency() {}
