@@ -88,64 +88,58 @@ const beyonceHash = {
 function printAllSongs() {
     console.log(beyonceHash.hits)
 }
-printAllSongs()
-
 // 2. Print all the movies
 function printAllMovies() {
     console.log(beyonceHash.movies)
-
 }
-printAllMovies()
-
-
 // 3. Return an array of all Beyonce's hit song titles
 function hitSongTitles() {
-    const allSongs = beyonceHash.hits.map(hit => hit.title)
-    console.log(allSongs)
+    return beyonceHash.hits.map(hit => hit.title)
+
 }
-hitSongTitles()
+
 
 // 4. Return an array of all Beyonce's fierceness ratings
 function allFiercenessRatings() {
-    const fierceness = beyonceHash.hits.map(hit => hit.fierceness)
-    console.log(fierceness)
+    return beyonceHash.hits.map(hit => hit.fierceness)
+
 }
 allFiercenessRatings()
 
 
 // 5. Return all the songs where Beyonce is wearing a bodysuit or a bodysuit is part of the video theme
 function songsWithBodySuits() {
-    const bodysuit = beyonceHash.hits.filter(hit => hit.signature_look.includes("bodysuit") || hit.video_theme.includes("bodysuit") )
-    console.log(bodysuit) 
-    
-    }
-    songsWithBodySuits()
-        // 6. Return an array with all of the songs where Beyonce's fierceness is greater than or equal to a given number
-    function getSongsByFiercenessGTE() {
-        const moreFireceThanEight = beyonceHash.hits.filter(hit => hit.fierceness >= 8)
-        console.log(moreFireceThanEight)
-    }
-    getSongsByFiercenessGTE()
-    // 7. Return an array with all of the movies Beyonce made after or during a given year
-    function getMoviesByDateGTE() {
-        const moviesAfter = beyonceHash.movies.filter(movies => movies.year >=2009)
-        console.log(moviesAfter)
-    }
-    getMoviesByDateGTE()
+    return beyonceHash.hits.filter(hit => hit.signature_look.includes("bodysuit") || hit.video_theme.includes("bodysuit"))
 
-    // 8. Return all hit songs where Beyonce was in a group
-    function groupHits() {
-        const group = beyonceHash.hits.filter(hit => hit.group = true)
-        console.log(group)
-    }
-    groupHits()
 
-    // 9. Return a hit song where Beyonce's hair is blonde
-    function findBlondeHit() {
-        const blonde = beyonceHash.hits.filter(hit => hit.hair.includes('blonde'))
-        console.log(blonde)
-    }
-    findBlondeHit()
+}
+songsWithBodySuits()
+// 6. Return an array with all of the songs where Beyonce's fierceness is greater than or equal to a given number
+function getSongsByFiercenessGTE() {
+    return beyonceHash.hits.filter(hit => hit.fierceness >= 8)
+
+}
+getSongsByFiercenessGTE()
+// 7. Return an array with all of the movies Beyonce made after or during a given year
+function getMoviesByDateGTE() {
+    return beyonceHash.movies.filter(movies => movies.year >= 2009)
+
+}
+getMoviesByDateGTE()
+
+// 8. Return all hit songs where Beyonce was in a group
+function groupHits() {
+    return beyonceHash.hits.filter(hit => hit.group = true)
+
+}
+groupHits()
+
+// 9. Return a hit song where Beyonce's hair is blonde
+function findBlondeHit() {
+    beyonceHash.hits.filter(hit => hit.hair.includes('blonde'))
+
+}
+findBlondeHit()
 // 10. Return the hit song "Sorry"
 function sorry() {
     return beyonceHash.hits.find(hit => hit.title = 'Sorry')
@@ -157,22 +151,25 @@ function getSong() {
 }
 getSong()
 // 12. Return all hit songs where Beyonce's fierceness rating is 10
-function fiercestHits() { 
-    const fierceTen = beyonceHash.hits.filter(hit => hit.fierceness =10)
-    console.log(fierceTen)
+function fiercestHits() {
+    return beyonceHash.hits.filter(hit => hit.fierceness = 10)
+    
 }
 fiercestHits()
 // 13. Return the sum of Beyonce's fierceness value for all of her hit songs
-function hitFiercenessSum() { 
+function hitFiercenessSum() {
     const vals = beyonceHash.hits.map(hit => hit.fierceness)
-    let sum = vals.reduce((acc, val) => acc + val);
+    const sum = vals.reduce((acc, val) => acc + val);
     console.log(sum)
-} 
+    return sum
+}
 
 hitFiercenessSum()
 // 14. Return the average fierceness value for all Beyonce's hit songs
-function hitFiercenessAverage() { }
+function hitFiercenessAverage() {
 
+}
+hitFiercenessAverage
 // 15. Return the sum of Beyonce's rating value for all of her movies
 function ratingSum() { }
 
