@@ -83,7 +83,7 @@ const beyonceHash = {
         { title: 'The Fighting Temptations', year: 2003, rating: 5 }
     ]
 };
-/*
+
 // 1. Print all the songs
 function printAllSongs() {
     console.log(beyonceHash.hits)
@@ -161,10 +161,15 @@ function fiercestHits() {
     const fierceTen = beyonceHash.hits.filter(hit => hit.fierceness =10)
     console.log(fierceTen)
 }
-fiercestHits()*/
+fiercestHits()
 // 13. Return the sum of Beyonce's fierceness value for all of her hit songs
-function hitFiercenessSum() { }
+function hitFiercenessSum() { 
+    const vals = beyonceHash.hits.map(hit => hit.fierceness)
+    let sum = vals.reduce((acc, val) => acc + val);
+    console.log(sum)
+} 
 
+hitFiercenessSum()
 // 14. Return the average fierceness value for all Beyonce's hit songs
 function hitFiercenessAverage() { }
 
