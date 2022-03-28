@@ -152,38 +152,52 @@ function getSong() {
 getSong()
 // 12. Return all hit songs where Beyonce's fierceness rating is 10
 function fiercestHits() {
-    return beyonceHash.hits.filter(hit => hit.fierceness = 10)
-    
+    return beyonceHash.hits.filter(hit => hit.fierceness === 10)
+
 }
 fiercestHits()
 // 13. Return the sum of Beyonce's fierceness value for all of her hit songs
 function hitFiercenessSum() {
-    const vals = beyonceHash.hits.map(hit => hit.fierceness)
-    const sum = vals.reduce((acc, val) => acc + val);
-    console.log(sum)
-    return sum
+    return allFiercenessRatings().reduce((sum, totalFierce) => sum + totalFierce)
+    
 }
-
+console.log(hitFiercenessSum())
 hitFiercenessSum()
 // 14. Return the average fierceness value for all Beyonce's hit songs
 function hitFiercenessAverage() {
+    return hitFiercenessSum() / allFiercenessRatings().length
+
 
 }
+console.log(hitFiercenessAverage())
+
 hitFiercenessAverage
 // 15. Return the sum of Beyonce's rating value for all of her movies
-function ratingSum() { }
+function ratingSum() { 
+    return beyonceHash.movies.map(movie => movie.rating).reduce((sum , totalRate) => sum + totalRate)
+}
+console.log(ratingSum())
 
 // 16. Return the average rating value for all of her movies
-function ratingAverage() { }
-
+function ratingAverage() { 
+    return ratingSum() / beyonceHash.movies.length
+}
+console.log(ratingAverage())
 // 17. Return the sum of the total number of dancers in all of the hit song videos
-function hitDancerSum() { }
+function hitDancerSum() { 
+    return beyonceHash.hits.map(hit => hit.dancers).reduce((sum, totalDancers) => sum + totalDancers)
+}
+console.log(hitDancerSum())
 
 // 18. Return an array of Beyonce's hairstyles without repeats
-function uniqueHairstyles() { }
-
+function uniqueHairstyles() { 
+    return [...new Set(beyonceHash.hits.map( hit => hit.hair).reduce((array , hair) => array.concat(hair), []))]
+}
+console.log(uniqueHairstyles())
 // 19. Return an object where the properties are song names and the value is an object which contains that song's fierceness and the average fierceness for all songs
-function songFiercenessByName() { }
+function songFiercenessByName() {
+    return 
+}
 
 // 20. Return an object where the properties are movie names and the value is an object which contains that movie's rating and the average rating for all movies
 function movieRatingsByName() { }
