@@ -136,7 +136,7 @@ groupHits()
 
 // 9. Return a hit song where Beyonce's hair is blonde
 function findBlondeHit() {
-    beyonceHash.hits.filter(hit => hit.hair.includes('blonde'))
+    beyonceHash.hits.find(hit => hit.hair.includes('blonde'))
 }
 findBlondeHit()
 // 10. Return the hit song "Sorry"
@@ -146,7 +146,7 @@ function sorry() {
 sorry()
 // 11. Return a given song
 function getSong() {
-    return beyonceHash.hits.find(hit => hit.title = 'Say My Name')
+    return beyonceHash.hits.find(hit => hit.title === title)
 }
 getSong()
 // 12. Return all hit songs where Beyonce's fierceness rating is 10
