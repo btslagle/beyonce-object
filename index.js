@@ -188,14 +188,19 @@ function uniqueHairstyles() {
 
 // 19. Return an object where the properties are song names and the value is an object which contains that song's fierceness and the average fierceness for all songs
 function songFiercenessByName() {
-    return beyonceHash.hits.map(hit => {
-        return {
-            songName: hit.title,
-            fierceness: hit.fierceness,
-            averageFierceness: hitFiercenessAverage()
-        }
-    })
-
+    return beyonceHash.hits
+        .map(hit => {
+            return {
+                title: hit.title,
+                fierceness: hit.fierceness,
+                averageFierceness: hitFiercenessAverage()
+            }
+        })
+        .reduce((songsByName, hit) => {
+            const fierceness = { ...songsByName, [hit.title]: hit, }
+            delete hit.title;
+            return fierceness
+        }, {})
 }
 
 
@@ -203,22 +208,29 @@ function songFiercenessByName() {
 function movieRatingsByName() {
     return beyonceHash.movies.map(movie => {
         return {
-            movieName: movie.title,
-            movieRating: movie.rating,
+            title: movie.title,
+            rating: movie.rating,
             averageRating: ratingAverage()
         }
     })
+        .reduce((moviesByName, movie) => {
+            const rating = {
+                ...moviesByName, [movie.title]: movie,
+            }
+            delete movie.title;
+            return rating
+        }, {})
 }
+
 
 // 21. Return an object with Beyonce's hairstyles as the keys and a tally of each hairstyle, eg. `{ "blonde": 3, ... }`
 function hairStyleFrequency() {
-    return uniqueHairstyles().map(hair => {
-        const total = beyonceHash.hits.map(hit => hit.hair).flat().filter(total => (total === hair)).length
+    return uniqueHairstyles().reduce((hairOject, hair) => {
         return {
-            hair, total
+            ...hairOject, [hair]: beyonceHash.hits.map(hit => hit.hair).flat().filter(hairstyle => hairstyle === hair).length
         }
-    })
-}    
+    }, {})
+}
 //Testing
 
 printAllSongs()
@@ -241,13 +253,13 @@ console.log(hitDancerSum())
 console.log(uniqueHairstyles())
 console.log(songFiercenessByName())
 console.log(movieRatingsByName())
-console.log(hairStyleFrequency())    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+console.log(hairStyleFrequency())
+
+
+
+
+
+
+
+
+
